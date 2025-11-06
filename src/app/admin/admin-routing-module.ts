@@ -5,6 +5,7 @@ import { Categoria } from './inventario/components/categoria/categoria';
 import { Layout } from './layout/layout';
 
 const routes: Routes = [
+  
   {
     path: '',
     component: Layout,
