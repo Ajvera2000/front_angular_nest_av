@@ -3,13 +3,14 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private baseUrl = "http://jsonplaceholder.typicode.com" //Solo para prueba deberia ir "http://127.0.0.1:3000"
+  private baseUrl = environment.urlServidor//Solo para prueba deberia ir "http://127.0.0.1:3000"
 
   private http = inject(HttpClient)
 
@@ -18,7 +19,7 @@ export class AuthService {
   constructor() { }
 
   loginConNest(credenciales: any) {
-    return this.http.get<any>(`${this.baseUrl}/todos`);
+    return this.http.post<any>(`${this.baseUrl}/auth/login`, credenciales);
   }
 
   registroConNest(datos: any) {

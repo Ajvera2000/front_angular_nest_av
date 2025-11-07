@@ -14,8 +14,8 @@ export class Login {
   private http = inject(HttpClient);
 
   loginForm = new FormGroup({
-    email: new FormControl("", [Validators.email, Validators.required]),
-    password: new FormControl("", Validators.required)
+    email: new FormControl("ajb.vera@yavirac.edu.ec", [Validators.email, Validators.required]),
+    password: new FormControl("123456", Validators.required)
   });
 
   funIngresar() {
